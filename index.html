@@ -1,754 +1,600 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Sevaamrit - Preserving Dignity, Nourishing Lives. An NGO dedicated to food distribution, clothing donation, and disaster relief across India.">
+    <meta name="keywords" content="NGO, charity, food distribution, clothing donation, disaster relief, India, Sevaamrit, donate, volunteer, annadaan">
+    <meta name="author" content="Sevaamrit Trust">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sevaamrit.org/">
+    <meta property="og:title" content="Sevaamrit | Preserving Dignity, Nourishing Lives">
+    <meta property="og:description" content="Join us in our mission to serve humanity through food distribution, clothing donation, and disaster relief across India.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sevaamrit.org/">
+    <meta property="twitter:title" content="Sevaamrit | Preserving Dignity, Nourishing Lives">
+    <meta property="twitter:description" content="Join us in our mission to serve humanity through food distribution, clothing donation, and disaster relief across India.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#FF9933">
+    <meta name="msapplication-TileColor" content="#FF9933">
+
     <title>Sevaamrit | Preserving Dignity, Nourishing Lives</title>
-    <meta name="description" content="Sevaamrit - Bridging the gap between surplus and scarcity through food, clothing, and disaster relief.">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Manifest for PWA -->
+    <link rel="manifest" href="manifest.json">
 
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🙏</text></svg>">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=League+Spartan:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        saffron: '#FF9933',
-                        earth: '#8B4513',
-                        forest: '#2E8B57',
-                        cream: '#FDFBF7',
-                        dark: '#1a1a1a',
-                        light: '#f4f4f5'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Merriweather', 'serif'],
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <style>
-        /* Custom Styles */
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3, h4 { font-family: 'Merriweather', serif; }
-        
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-        .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-        }
-
-        .cta-bg {
-            background-image: linear-gradient(rgba(46, 139, 87, 0.9), rgba(46, 139, 87, 0.85)), url('https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-        }
-        
-        .volunteer-bg {
-             background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-        }
-
-        /* Hide scrollbar for clean horizontal scroll if needed */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-cream text-dark antialiased overflow-x-hidden">
-
-    <!-- Navigation Bar -->
-    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <!-- Logo -->
-                <a href="#" class="flex items-center gap-2 group">
-                    <div class="w-10 h-10 bg-saffron rounded-full flex items-center justify-center text-white shadow-lg group-hover:rotate-12 transition">
-                        <i class="fa-solid fa-hands-holding-circle text-xl"></i>
-                    </div>
-                    <span class="font-serif font-bold text-2xl tracking-tight text-gray-800">Seva<span class="text-saffron">amrit</span></span>
-                </a>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#initiatives" class="text-sm font-semibold text-gray-600 hover:text-saffron uppercase tracking-wide transition">Initiatives</a>
-                    <a href="#impact" class="text-sm font-semibold text-gray-600 hover:text-saffron uppercase tracking-wide transition">Impact</a>
-                    <a href="#stories" class="text-sm font-semibold text-gray-600 hover:text-saffron uppercase tracking-wide transition">Stories</a>
-                    <a href="#volunteer" class="text-sm font-semibold text-gray-600 hover:text-saffron uppercase tracking-wide transition">Volunteer</a>
-                    <a href="#donate" class="bg-saffron text-white px-6 py-2.5 rounded-full font-bold shadow-md hover:bg-orange-600 hover:shadow-lg transition transform hover:-translate-y-0.5">
-                        Donate Now
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-saffron focus:outline-none p-2">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
-            <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="#initiatives" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-orange-50 hover:text-saffron rounded-lg">Our Initiatives</a>
-                <a href="#impact" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-orange-50 hover:text-saffron rounded-lg">Our Impact</a>
-                <a href="#stories" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-orange-50 hover:text-saffron rounded-lg">Stories of Hope</a>
-                <a href="#volunteer" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-orange-50 hover:text-saffron rounded-lg">Volunteer</a>
-                <a href="#donate" class="block w-full text-center mt-4 bg-saffron text-white px-3 py-3 rounded-lg font-bold">Donate Now</a>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🙏</span>
+                <span class="logo-text">Sevaamrit</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#impact" class="nav-link">Impact</a></li>
+                <li><a href="#initiatives" class="nav-link">Initiatives</a></li>
+                <li><a href="#reach" class="nav-link">Our Reach</a></li>
+                <li><a href="#donate" class="nav-link donate-btn">Donate Now</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative h-screen min-h-[600px] flex items-center justify-center parallax hero-bg text-center text-white px-4">
-        <div class="absolute inset-0 bg-black/30"></div>
-        <div class="relative z-10 max-w-5xl mx-auto animate-float">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-xs font-bold tracking-widest uppercase mb-6">
-                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                Registered 80G Non-Profit
-            </div>
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight drop-shadow-lg">
-                Preserving Dignity,<br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-yellow-300">Nourishing Lives.</span>
-            </h1>
-            <p class="text-lg md:text-xl text-gray-100 mb-10 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
-                We bridge the gap between urban surplus and rural scarcity. Join the movement to provide food, clothing, and hope to India's most vulnerable.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#donate" class="w-full sm:w-auto bg-saffron text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-orange-600 transition shadow-xl hover:shadow-2xl flex items-center justify-center gap-2">
-                    <span>Donate Funds</span>
-                    <i class="fa-solid fa-heart"></i>
+    <section class="hero" id="home">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-group-of-friends-partying-happily-4640-large.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="hero-title">Preserving Dignity,<br>Nourishing Lives</h1>
+            <p class="hero-subtitle">Every meal shared is a blessing multiplied. Join us in our mission to serve humanity with love, respect, and compassion.</p>
+            <div class="hero-buttons">
+                <a href="#donate" class="btn btn-primary">
+                    <i class="fas fa-heart"></i> Donate Amrit
                 </a>
-                <a href="#initiatives" class="w-full sm:w-auto bg-white/10 backdrop-blur-md border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-dark transition flex items-center justify-center gap-2">
-                    <span>Explore Initiatives</span>
-                    <i class="fa-solid fa-arrow-right"></i>
+                <a href="#about" class="btn btn-secondary">
+                    <i class="fas fa-play-circle"></i> Watch Our Story
                 </a>
             </div>
         </div>
-        
-        <!-- Scroll Indicator -->
-        <a href="#impact" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer text-white/80 hover:text-white">
-            <i class="fa-solid fa-chevron-down text-3xl"></i>
-        </a>
-    </header>
-
-    <!-- Impact Dashboard (Akshaya Patra Style) -->
-    <section id="impact" class="relative z-20 -mt-24 px-4 pb-16">
-        <div class="max-w-6xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden border-b-4 border-saffron">
-            <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100">
-                <!-- Stat 1 -->
-                <div class="p-8 text-center group hover:bg-orange-50 transition duration-300">
-                    <div class="w-16 h-16 mx-auto bg-green-100 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
-                        <i class="fa-solid fa-bowl-rice text-3xl text-forest"></i>
-                    </div>
-                    <div class="text-4xl md:text-5xl font-black text-dark mb-2 counter" data-target="154200">0</div>
-                    <p class="text-gray-500 font-medium uppercase text-sm tracking-wider">Meals Served This Month</p>
-                </div>
-                <!-- Stat 2 -->
-                <div class="p-8 text-center group hover:bg-orange-50 transition duration-300">
-                    <div class="w-16 h-16 mx-auto bg-orange-100 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
-                        <i class="fa-solid fa-shirt text-3xl text-saffron"></i>
-                    </div>
-                    <div class="text-4xl md:text-5xl font-black text-dark mb-2 counter" data-target="8500">0</div>
-                    <p class="text-gray-500 font-medium uppercase text-sm tracking-wider">Dignity Kits Distributed</p>
-                </div>
-                <!-- Stat 3 -->
-                <div class="p-8 text-center group hover:bg-orange-50 transition duration-300">
-                    <div class="w-16 h-16 mx-auto bg-blue-100 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
-                        <i class="fa-solid fa-map-location-dot text-3xl text-blue-600"></i>
-                    </div>
-                    <div class="text-4xl md:text-5xl font-black text-dark mb-2 counter" data-target="412">0</div>
-                    <p class="text-gray-500 font-medium uppercase text-sm tracking-wider">Villages Reached</p>
-                </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
             </div>
+            <span>Scroll to explore</span>
         </div>
     </section>
 
-    <!-- Initiatives Section (The 3 Pillars) -->
-    <section id="initiatives" class="py-20 bg-cream">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-saffron font-bold tracking-widest uppercase text-sm">What We Do</span>
-                <h2 class="text-3xl md:text-5xl font-bold text-dark mt-2 mb-6">Holistic Service, <br><span class="italic font-serif text-gray-500">Not Just Charity</span></h2>
-                <div class="w-24 h-1 bg-saffron mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1: Food -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 group">
-                    <div class="relative h-64 overflow-hidden">
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1594708767771-a7502209ff51?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Food Distribution" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
-                        <div class="absolute bottom-4 left-4 z-20 bg-forest text-white px-3 py-1 rounded text-xs font-bold uppercase">Amrit Aahar</div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-dark mb-3 group-hover:text-forest transition">Food Security</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed">Centralized kitchens providing hot, nutritious meals to government schools and slum clusters. Ending classroom hunger.</p>
-                        <a href="#" class="inline-flex items-center text-forest font-bold hover:underline">
-                            Sponsor a Meal <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Card 2: Cloth -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 group">
-                    <div class="relative h-64 overflow-hidden">
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cloth Distribution" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
-                        <div class="absolute bottom-4 left-4 z-20 bg-saffron text-white px-3 py-1 rounded text-xs font-bold uppercase">Vastra Samman</div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-dark mb-3 group-hover:text-saffron transition">Dignity via Cloth</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed">Collecting urban surplus clothing and creating "Family Kits" for rural labor. Turning waste into a reward for work.</p>
-                        <a href="#" class="inline-flex items-center text-saffron font-bold hover:underline">
-                            Donate Material <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
-                        </a>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <span class="section-tag">About Sevaamrit</span>
+                    <h2 class="section-title">Where Service Becomes Sacred</h2>
+                    <p class="about-description">
+                        <strong>Sevaamrit</strong> (सेवामृत) means "The Nectar of Service." We believe that true service transcends charity—it restores dignity, builds community, and transforms both the giver and receiver.
+                    </p>
+                    <p class="about-description">
+                        Born from the ancient Indian philosophy of <em>"Annadaan"</em> (the gift of food), we work tirelessly to ensure no one goes hungry, no one feels forgotten, and every individual is treated with the respect they deserve.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>100% Transparent Operations</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Section 80G Tax Benefits</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Pan-India Network</span>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Card 3: Relief -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 group">
-                    <div class="relative h-64 overflow-hidden">
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Medical Relief" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
-                        <div class="absolute bottom-4 left-4 z-20 bg-earth text-white px-3 py-1 rounded text-xs font-bold uppercase">Sanjeevani</div>
+                <div class="about-image" data-aos="fade-left">
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Volunteers serving food">
+                        <div class="image-accent"></div>
                     </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-dark mb-3 group-hover:text-earth transition">Disaster Relief</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed">Rapid response teams for floods, earthquakes, and pandemics. Plus ongoing rural health camps in tribal belts.</p>
-                        <a href="#" class="inline-flex items-center text-earth font-bold hover:underline">
-                            Support Relief <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
-                        </a>
+                    <div class="floating-card">
+                        <span class="card-number">10+</span>
+                        <span class="card-text">Years of Service</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEW SECTION: Stories of Hope -->
-    <section id="stories" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
-                <div class="max-w-2xl">
-                    <span class="text-forest font-bold tracking-widest uppercase text-sm">Voices from the Field</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-dark mt-2">Stories of Hope & Change</h2>
-                </div>
-                <a href="#" class="hidden md:inline-flex items-center text-forest font-bold hover:underline mt-4 md:mt-0">
-                    Read All Stories <i class="fa-solid fa-arrow-right ml-2"></i>
-                </a>
+    <!-- Impact Dashboard Section -->
+    <section class="impact" id="impact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Our Impact</span>
+                <h2 class="section-title">Numbers That Tell Our Story</h2>
+                <p class="section-subtitle">Every number represents a life touched, a family fed, a moment of hope restored.</p>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Story 1 -->
-                <div class="bg-light rounded-2xl p-6 hover:shadow-xl transition duration-300 border border-transparent hover:border-gray-200">
-                    <div class="flex items-center gap-4 mb-4">
-                        <img src="https://randomuser.me/api/portraits/women/42.jpg" alt="Beneficiary" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow">
-                        <div>
-                            <h4 class="font-bold text-dark">Lakshmi Devi</h4>
-                            <p class="text-xs text-gray-500">Koppal, Karnataka</p>
-                        </div>
+            <div class="impact-grid">
+                <div class="impact-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="impact-icon meals">
+                        <i class="fas fa-bowl-rice"></i>
                     </div>
-                    <p class="text-gray-600 italic mb-4">"The 'Vastra Samman' kit didn't just give us clothes; it gave my husband tools to repair our roof. We earned this with dignity."</p>
-                    <div class="w-full h-48 rounded-xl overflow-hidden mt-4">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover hover:scale-105 transition">
-                    </div>
+                    <div class="impact-number" data-target="1542000">0</div>
+                    <div class="impact-label">Meals Served</div>
+                    <div class="impact-sublabel">And counting every day</div>
                 </div>
-
-                <!-- Story 2 -->
-                <div class="bg-light rounded-2xl p-6 hover:shadow-xl transition duration-300 border border-transparent hover:border-gray-200">
-                    <div class="flex items-center gap-4 mb-4">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Beneficiary" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow">
-                        <div>
-                            <h4 class="font-bold text-dark">Ramesh Kumar</h4>
-                            <p class="text-xs text-gray-500">School Principal, Bihar</p>
-                        </div>
+                <div class="impact-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="impact-icon clothes">
+                        <i class="fas fa-shirt"></i>
                     </div>
-                    <p class="text-gray-600 italic mb-4">"Attendance has gone up by 40% since the Amrit Aahar meals started. Children can finally focus on books, not their hunger."</p>
-                    <div class="w-full h-48 rounded-xl overflow-hidden mt-4">
-                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover hover:scale-105 transition">
-                    </div>
+                    <div class="impact-number" data-target="85420">0</div>
+                    <div class="impact-label">Clothes Distributed</div>
+                    <div class="impact-sublabel">Warmth for every season</div>
                 </div>
-
-                 <!-- Story 3 -->
-                 <div class="bg-light rounded-2xl p-6 hover:shadow-xl transition duration-300 border border-transparent hover:border-gray-200 lg:block hidden">
-                    <div class="flex items-center gap-4 mb-4">
-                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Volunteer" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow">
-                        <div>
-                            <h4 class="font-bold text-dark">Sarah Jenkins</h4>
-                            <p class="text-xs text-gray-500">Volunteer, London</p>
-                        </div>
+                <div class="impact-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="impact-icon villages">
+                        <i class="fas fa-tree-city"></i>
                     </div>
-                    <p class="text-gray-600 italic mb-4">"Visiting the centralized kitchen in Hubli was an eye-opener. The hygiene and scale of operations rival any corporate factory."</p>
-                    <div class="w-full h-48 rounded-xl overflow-hidden mt-4">
-                        <img src="https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover hover:scale-105 transition">
+                    <div class="impact-number" data-target="245">0</div>
+                    <div class="impact-label">Villages Reached</div>
+                    <div class="impact-sublabel">Across 12 states</div>
+                </div>
+                <div class="impact-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="impact-icon volunteers">
+                        <i class="fas fa-hands-holding-heart"></i>
                     </div>
+                    <div class="impact-number" data-target="5200">0</div>
+                    <div class="impact-label">Active Volunteers</div>
+                    <div class="impact-sublabel">Hearts united in service</div>
                 </div>
             </div>
-            
-             <div class="mt-8 text-center md:hidden">
-                <a href="#" class="inline-flex items-center text-forest font-bold hover:underline">
-                    Read All Stories <i class="fa-solid fa-arrow-right ml-2"></i>
-                </a>
+        </div>
+        <div class="impact-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Initiatives Section -->
+    <section class="initiatives" id="initiatives">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Our Initiatives</span>
+                <h2 class="section-title">Serving Through Action</h2>
+                <p class="section-subtitle">Three pillars of compassion that drive our mission forward.</p>
+            </div>
+            <div class="initiatives-grid">
+                <!-- Initiative 1: Amrit Aahar -->
+                <div class="initiative-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Food Distribution">
+                        <div class="card-overlay">
+                            <span class="card-tag">Flagship Program</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3 class="card-title">Amrit Aahar</h3>
+                        <p class="card-description">Daily nutritious meals served with love and dignity to those in need—schools, hospitals, and community centers.</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> Mid-day meals in 50+ schools</li>
+                            <li><i class="fas fa-check"></i> Hospital patient meal support</li>
+                            <li><i class="fas fa-check"></i> Community kitchen network</li>
+                        </ul>
+                        <a href="#donate" class="card-link">Support This Initiative <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Initiative 2: Vastra Samman -->
+                <div class="initiative-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Clothing Donation">
+                        <div class="card-overlay">
+                            <span class="card-tag">Year-Round</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon clothes-icon">
+                            <i class="fas fa-shirt"></i>
+                        </div>
+                        <h3 class="card-title">Vastra Samman</h3>
+                        <p class="card-description">Providing clean, dignified clothing to those without—because everyone deserves to feel presentable and protected.</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> Winter blanket drives</li>
+                            <li><i class="fas fa-check"></i> School uniform donations</li>
+                            <li><i class="fas fa-check"></i> Festival clothing camps</li>
+                        </ul>
+                        <a href="#donate" class="card-link">Support This Initiative <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Initiative 3: Sanjeevani -->
+                <div class="initiative-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Medical Camp">
+                        <div class="card-overlay">
+                            <span class="card-tag">Emergency Response</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon relief-icon">
+                            <i class="fas fa-kit-medical"></i>
+                        </div>
+                        <h3 class="card-title">Sanjeevani</h3>
+                        <p class="card-description">Rapid disaster relief and medical camps in remote areas—bringing healthcare and hope when it's needed most.</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> Mobile medical units</li>
+                            <li><i class="fas fa-check"></i> Flood & earthquake relief</li>
+                            <li><i class="fas fa-check"></i> Medicine distribution</li>
+                        </ul>
+                        <a href="#donate" class="card-link">Support This Initiative <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Tech/Canvas Section: Logistics Network -->
-    <section id="logistics" class="py-20 bg-dark relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <!-- Text Content -->
-            <div class="text-white">
-                <div class="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-bold tracking-widest mb-4 text-saffron border border-white/10">LIVE LOGISTICS</div>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">The Seva Network</h2>
-                <p class="text-gray-400 text-lg mb-8 leading-relaxed">
-                    Like <span class="text-white font-semibold">Goonj</span>, we operate a massive reverse-logistics chain. We collect material from 12 urban hubs and transport it to over 400 remote villages.
-                </p>
-                
-                <div class="space-y-6">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center flex-shrink-0 border border-white/10">
-                            <i class="fa-solid fa-truck-fast text-saffron text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-bold mb-1">Urban Collection</h4>
-                            <p class="text-gray-500 text-sm">Doorstep pickup in Bangalore, Delhi, and Mumbai.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center flex-shrink-0 border border-white/10">
-                            <i class="fa-solid fa-hands-bubbles text-saffron text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-bold mb-1">Processing & Sorting</h4>
-                            <p class="text-gray-500 text-sm">Every item is sanitized, repaired, and packed with dignity.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Map/Reach Section -->
+    <section class="reach" id="reach">
+        <div class="reach-background">
+            <div class="india-map">
+                <svg viewBox="0 0 800 900" class="map-svg">
+                    <!-- Simplified India Map Path -->
+                    <path class="map-path" d="M400,50 L450,80 L500,60 L550,90 L600,70 L650,100 L680,150 L700,200 L720,280 L700,350 L720,420 L700,500 L650,580 L600,650 L550,700 L500,750 L450,800 L400,850 L350,800 L300,750 L250,700 L200,650 L150,580 L100,500 L80,420 L100,350 L80,280 L100,200 L120,150 L150,100 L200,70 L250,90 L300,60 L350,80 Z"/>
 
-            <!-- Canvas Container -->
-            <div class="relative w-full h-[450px] bg-gray-900 rounded-2xl border border-gray-700 backdrop-blur-sm overflow-hidden shadow-2xl">
-                <!-- Map Overlay (Simulated with text/opacity) -->
-                <div class="absolute inset-0 opacity-10 flex items-center justify-center pointer-events-none">
-                     <i class="fa-solid fa-map text-[300px] text-white"></i>
-                </div>
-                
-                <canvas id="networkCanvas" class="absolute inset-0 w-full h-full z-10"></canvas>
-                
-                <!-- Overlay Legend -->
-                <div class="absolute bottom-4 left-4 bg-black/80 backdrop-blur px-4 py-3 rounded-lg border border-white/10 text-xs text-white z-20 shadow-lg">
-                    <div class="uppercase text-[10px] text-gray-400 tracking-wider mb-2 font-bold">Network Status</div>
-                    <div class="flex items-center gap-2 mb-2">
-                        <span class="w-2 h-2 rounded-full bg-saffron animate-pulse"></span> 
-                        <span>Active Hubs (12)</span>
+                    <!-- Active Location Pins -->
+                    <g class="location-pins">
+                        <circle class="pin pulse" cx="300" cy="200" r="8"/>
+                        <circle class="pin pulse" cx="450" cy="350" r="8"/>
+                        <circle class="pin pulse" cx="350" cy="450" r="8"/>
+                        <circle class="pin pulse" cx="520" cy="500" r="8"/>
+                        <circle class="pin pulse" cx="400" cy="600" r="8"/>
+                        <circle class="pin pulse" cx="280" cy="380" r="8"/>
+                        <circle class="pin pulse" cx="480" cy="250" r="8"/>
+                        <circle class="pin pulse" cx="200" cy="320" r="8"/>
+                        <circle class="pin pulse" cx="550" cy="400" r="8"/>
+                        <circle class="pin pulse" cx="380" cy="280" r="8"/>
+                        <circle class="pin pulse" cx="420" cy="700" r="8"/>
+                        <circle class="pin pulse" cx="320" cy="550" r="8"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="container">
+            <div class="reach-content">
+                <div class="reach-text" data-aos="fade-right">
+                    <span class="section-tag light">Our Presence</span>
+                    <h2 class="section-title light">Serving Across India</h2>
+                    <p class="reach-description">From the Himalayas to Kanyakumari, our network of volunteers and partners ensures help reaches those who need it most.</p>
+
+                    <div class="reach-stats">
+                        <div class="reach-stat">
+                            <div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-number">12</span>
+                                <span class="stat-label">States Active</span>
+                            </div>
+                        </div>
+                        <div class="reach-stat">
+                            <div class="stat-icon"><i class="fas fa-warehouse"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-number">25</span>
+                                <span class="stat-label">Distribution Centers</span>
+                            </div>
+                        </div>
+                        <div class="reach-stat">
+                            <div class="stat-icon"><i class="fas fa-truck"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-number">45</span>
+                                <span class="stat-label">Mobile Units</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-white/50"></span> 
-                        <span>Routes in Transit</span>
+
+                    <div class="active-regions">
+                        <h4>Active Regions:</h4>
+                        <div class="region-tags">
+                            <span class="region-tag">Uttar Pradesh</span>
+                            <span class="region-tag">Maharashtra</span>
+                            <span class="region-tag">Rajasthan</span>
+                            <span class="region-tag">Bihar</span>
+                            <span class="region-tag">Madhya Pradesh</span>
+                            <span class="region-tag">Gujarat</span>
+                            <span class="region-tag">Karnataka</span>
+                            <span class="region-tag">Tamil Nadu</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEW SECTION: Volunteer CTA -->
-    <section id="volunteer" class="py-24 volunteer-bg parallax relative">
-        <div class="absolute inset-0 bg-dark/80"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-serif">Join the Seva Squad</h2>
-            <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">We need more than money. We need your time, skills, and heart. Join 5,000+ volunteers across India.</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
-                <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/10 hover:bg-saffron hover:border-saffron transition duration-300 cursor-pointer group">
-                    <i class="fa-solid fa-box-open text-3xl text-saffron mb-4 group-hover:text-white"></i>
-                    <h4 class="text-white font-bold text-xl mb-2">Sorting Centers</h4>
-                    <p class="text-gray-300 text-sm group-hover:text-white">Help sort & pack dignity kits on weekends.</p>
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Voices of Impact</span>
+                <h2 class="section-title">Stories That Inspire</h2>
+            </div>
+            <div class="testimonials-slider" data-aos="fade-up">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text">"When floods destroyed our village, Sevaamrit was there within hours. They didn't just bring food—they brought hope. My children still remember the warm meals and kind smiles."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Kamla Devi">
+                        <div class="author-info">
+                            <strong>Kamla Devi</strong>
+                            <span>Beneficiary, Bihar</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/10 hover:bg-saffron hover:border-saffron transition duration-300 cursor-pointer group">
-                    <i class="fa-solid fa-chalkboard-user text-3xl text-saffron mb-4 group-hover:text-white"></i>
-                    <h4 class="text-white font-bold text-xl mb-2">Teaching Fellowship</h4>
-                    <p class="text-gray-300 text-sm group-hover:text-white">Teach English/Maths in our adopted schools.</p>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text">"Being a volunteer with Sevaamrit changed my life. The joy of serving a meal to someone who hasn't eaten in days—that feeling is indescribable. This is what seva truly means."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Rohit Sharma">
+                        <div class="author-info">
+                            <strong>Rohit Sharma</strong>
+                            <span>Volunteer, Delhi</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/10 hover:bg-saffron hover:border-saffron transition duration-300 cursor-pointer group">
-                    <i class="fa-solid fa-laptop-code text-3xl text-saffron mb-4 group-hover:text-white"></i>
-                    <h4 class="text-white font-bold text-xl mb-2">Remote/Tech</h4>
-                    <p class="text-gray-300 text-sm group-hover:text-white">Help with social media, web, or fundraising.</p>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text">"Our school's partnership with Sevaamrit ensures every child gets a nutritious mid-day meal. Attendance has improved by 40%. Education flourishes when hunger is addressed."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Dr. Priya Singh">
+                        <div class="author-info">
+                            <strong>Dr. Priya Singh</strong>
+                            <span>Principal, Govt. School UP</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <a href="#" class="inline-block bg-white text-dark font-bold px-8 py-4 rounded-full hover:bg-saffron hover:text-white transition shadow-lg">
-                Become a Volunteer
-            </a>
         </div>
     </section>
 
     <!-- Donation Section -->
-    <section id="donate" class="relative py-24 cta-bg parallax text-white text-center">
-        <div class="absolute inset-0 bg-forest/80"></div>
-        <div class="relative z-10 max-w-4xl mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 font-serif">Be The Amrit in Someone's Life</h2>
-            <p class="text-xl text-green-100 mb-10 font-light">Your contribution is eligible for tax exemption under Section 80G.</p>
+    <section class="donate" id="donate">
+        <div class="donate-pattern"></div>
+        <div class="container">
+            <div class="donate-wrapper">
+                <div class="donate-content" data-aos="fade-right">
+                    <span class="section-tag">Make a Difference</span>
+                    <h2 class="section-title">Your Generosity Creates Miracles</h2>
+                    <p class="donate-description">Every rupee you donate directly transforms into meals, clothes, and medical aid for those in need. 100% transparency guaranteed.</p>
 
-            <div class="bg-white text-dark rounded-3xl p-8 md:p-10 shadow-2xl max-w-2xl mx-auto transform transition hover:scale-[1.01]">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-xl font-bold text-gray-800">Choose Amount</h3>
-                    <div class="text-xs font-bold bg-green-100 text-green-700 px-2 py-1 rounded">SECURE <i class="fa-solid fa-lock ml-1"></i></div>
+                    <div class="donation-impact">
+                        <div class="impact-item">
+                            <span class="impact-amount">₹500</span>
+                            <span class="impact-desc">Feeds a family for a week</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-amount">₹1,000</span>
+                            <span class="impact-desc">Winter kit for 5 people</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-amount">₹2,500</span>
+                            <span class="impact-desc">Medical camp supplies</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                    <button class="donation-btn py-3 rounded-xl border-2 border-gray-200 font-bold text-gray-600 hover:border-saffron hover:bg-orange-50 hover:text-saffron transition">₹500</button>
-                    <button class="donation-btn py-3 rounded-xl border-2 border-saffron bg-saffron text-white font-bold shadow-md transform scale-105">₹1,200</button>
-                    <button class="donation-btn py-3 rounded-xl border-2 border-gray-200 font-bold text-gray-600 hover:border-saffron hover:bg-orange-50 hover:text-saffron transition">₹2,500</button>
-                    <button class="donation-btn py-3 rounded-xl border-2 border-gray-200 font-bold text-gray-600 hover:border-saffron hover:bg-orange-50 hover:text-saffron transition">Other</button>
-                </div>
-
-                <div class="bg-gray-50 p-4 rounded-xl mb-6 text-left border border-gray-100">
-                    <p class="text-sm text-gray-600"><strong>₹1,200</strong> can provide a month's worth of dry ration and hygiene supplies for a family of four in a drought-affected village.</p>
-                </div>
-
-                <button class="w-full bg-green-600 text-white font-bold text-xl py-4 rounded-xl hover:bg-green-700 transition shadow-lg flex items-center justify-center gap-2 group">
-                    Proceed to Pay
-                    <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition"></i>
-                </button>
-                
-                <div class="mt-4 flex justify-center gap-4 grayscale opacity-60">
-                    <i class="fa-brands fa-cc-visa text-2xl"></i>
-                    <i class="fa-brands fa-cc-mastercard text-2xl"></i>
-                    <i class="fa-brands fa-google-pay text-2xl"></i>
+                <div class="donate-form-wrapper" data-aos="fade-left">
+                    <div class="donate-card">
+                        <h3>Choose Your Contribution</h3>
+                        <div class="amount-buttons">
+                            <button class="amount-btn" data-amount="500">₹500</button>
+                            <button class="amount-btn active" data-amount="1000">₹1,000</button>
+                            <button class="amount-btn" data-amount="2500">₹2,500</button>
+                            <button class="amount-btn" data-amount="5000">₹5,000</button>
+                        </div>
+                        <div class="custom-amount">
+                            <label for="customAmount">Or enter custom amount:</label>
+                            <div class="input-wrapper">
+                                <span class="currency">₹</span>
+                                <input type="number" id="customAmount" placeholder="Enter amount" min="100">
+                            </div>
+                        </div>
+                        <div class="donation-type">
+                            <label class="radio-option">
+                                <input type="radio" name="donationType" value="onetime" checked>
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">One-time Donation</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="donationType" value="monthly">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">Monthly Recurring</span>
+                            </label>
+                        </div>
+                        <button class="donate-btn">
+                            <i class="fas fa-heart"></i> Donate Now
+                            <span class="btn-shine"></span>
+                        </button>
+                        <div class="secure-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Secure Payment | 80G Tax Benefits</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEW SECTION: Partners -->
-    <section class="py-16 bg-white border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-gray-500 uppercase tracking-widest text-xs font-bold mb-8">Trusted By Leading Organizations</p>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition duration-500">
-                <!-- Placeholders for Partner Logos -->
-                <div class="text-2xl font-bold text-gray-400 flex items-center gap-2"><i class="fa-brands fa-google"></i> Google.org</div>
-                <div class="text-2xl font-bold text-gray-400 flex items-center gap-2"><i class="fa-brands fa-microsoft"></i> Microsoft CSR</div>
-                <div class="text-2xl font-bold text-gray-400 flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> Tata Trusts</div>
-                <div class="text-2xl font-bold text-gray-400 flex items-center gap-2"><i class="fa-brands fa-amazon"></i> Amazon Cares</div>
-                <div class="text-2xl font-bold text-gray-400 flex items-center gap-2"><i class="fa-solid fa-landmark"></i> Govt of India</div>
+    <!-- Partners Section -->
+    <section class="partners">
+        <div class="container">
+            <div class="section-header small" data-aos="fade-up">
+                <span class="section-tag">Our Partners</span>
+                <h3>Trusted by Leading Organizations</h3>
+            </div>
+            <div class="partners-logos" data-aos="fade-up">
+                <div class="partner-logo">
+                    <i class="fas fa-building"></i>
+                    <span>CSR Partner</span>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-university"></i>
+                    <span>Govt. of India</span>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-globe"></i>
+                    <span>UN Partner</span>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-hands-helping"></i>
+                    <span>NGO Alliance</span>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-heart"></i>
+                    <span>Give India</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-16 border-t border-gray-800 text-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                <!-- Brand Info -->
-                <div>
-                    <div class="flex items-center gap-2 mb-4 text-white">
-                        <i class="fa-solid fa-hands-holding-circle text-2xl text-saffron"></i>
-                        <span class="font-serif font-bold text-xl">Sevaamrit</span>
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,64L48,58.7C96,53,192,43,288,48C384,53,480,75,576,80C672,85,768,75,864,64C960,53,1056,43,1152,48C1248,53,1344,75,1392,85.3L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-icon">🙏</span>
+                        <span class="logo-text">Sevaamrit</span>
                     </div>
-                    <p class="mb-6 leading-relaxed">
-                        A registered Section 8 Non-profit organization dedicated to preserving dignity and nourishing lives across India.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-saffron hover:text-white transition"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-saffron hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-saffron hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-saffron hover:text-white transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <p class="footer-tagline">Preserving Dignity, Nourishing Lives</p>
+                    <p class="footer-description">A registered charitable trust dedicated to serving humanity through food, clothing, and disaster relief.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
 
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider">Discover</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-saffron transition">Our Story</a></li>
-                        <li><a href="#" class="hover:text-saffron transition">Annual Reports</a></li>
-                        <li><a href="#" class="hover:text-saffron transition">Board Members</a></li>
-                        <li><a href="#" class="hover:text-saffron transition">Careers</a></li>
-                        <li><a href="#" class="hover:text-saffron transition">Volunteer</a></li>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#initiatives">Our Initiatives</a></li>
+                        <li><a href="#impact">Our Impact</a></li>
+                        <li><a href="#donate">Donate Now</a></li>
+                        <li><a href="#">Volunteer</a></li>
+                        <li><a href="#">Annual Reports</a></li>
                     </ul>
                 </div>
 
-                <!-- Legal -->
-                <div>
-                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider">Legal</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-saffron transition">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-saffron transition">Terms & Conditions</a></li>
-                        <li><a href="#" class="hover:text-saffron transition">80G Certificate</a></li>
-                        <li><a href="#" class="hover:text-saffron transition">FCRA Compliance</a></li>
+                <div class="footer-links">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="#">Become a Volunteer</a></li>
+                        <li><a href="#">Corporate Partnership</a></li>
+                        <li><a href="#">Start a Fundraiser</a></li>
+                        <li><a href="#">Donate Goods</a></li>
+                        <li><a href="#">Careers</a></li>
                     </ul>
                 </div>
 
-                <!-- Contact -->
-                <div>
-                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider">Contact Us</h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot mt-1 text-saffron"></i>
-                            <span>India</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-phone text-saffron"></i>
-                            <span>+91 80 1234 5678</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-envelope text-saffron"></i>
-                            <span>hello@sevaamrit.org</span>
-                        </li>
-                    </ul>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Seva Marg, Near Gandhi Ashram<br>New Delhi - 110001</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+91 98765 43210</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>namaste@sevaamrit.org</span>
+                    </div>
+                    <div class="newsletter">
+                        <label for="newsletter-email"><h5>Subscribe to our Newsletter</h5></label>
+                        <div class="newsletter-form">
+                            <input type="email" id="newsletter-email" placeholder="Your email address">
+                            <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p>&copy; 2025 Sevaamrit Foundation. All rights reserved.</p>
-                <p class="text-gray-600 text-xs">Designed with <i class="fa-solid fa-heart text-red-900"></i> for Humanity.</p>
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2024 Sevaamrit Trust. All Rights Reserved.</p>
+                    <p class="registration">Registered under Section 12A & 80G of Income Tax Act | FCRA Registered</p>
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Refund Policy</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript Logic -->
-    <script>
-        // 1. Mobile Menu Toggle
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            const icon = menuBtn.querySelector('i');
-            if (mobileMenu.classList.contains('hidden')) {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            } else {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            }
-        });
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-        // 2. Navbar Scroll Effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-md', 'bg-white/95');
-                navbar.classList.remove('py-4');
-            } else {
-                navbar.classList.remove('shadow-md');
-                navbar.classList.add('py-4');
-            }
-        });
-
-        // 3. Animated Counters
-        const counters = document.querySelectorAll('.counter');
-        const speed = 400; 
-        let animated = false;
-        const impactSection = document.getElementById('impact');
-
-        const animateCounters = () => {
-            counters.forEach(counter => {
-                const updateCount = () => {
-                    const target = +counter.getAttribute('data-target');
-                    const count = +counter.innerText;
-                    const inc = target / speed;
-                    if (count < target) {
-                        counter.innerText = Math.ceil(count + inc);
-                        setTimeout(updateCount, 10);
-                    } else {
-                        counter.innerText = target.toLocaleString();
-                    }
-                };
-                updateCount();
-            });
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            if(entries[0].isIntersecting && !animated) {
-                animateCounters();
-                animated = true;
-            }
-        });
-        observer.observe(impactSection);
-
-        // 4. Donation Button Interaction
-        const donateBtns = document.querySelectorAll('.donation-btn');
-        donateBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                // Reset all
-                donateBtns.forEach(b => {
-                    b.classList.remove('bg-saffron', 'text-white', 'border-saffron', 'scale-105', 'shadow-md');
-                    b.classList.add('border-gray-200', 'text-gray-600');
-                });
-                // Activate clicked
-                this.classList.remove('border-gray-200', 'text-gray-600');
-                this.classList.add('bg-saffron', 'text-white', 'border-saffron', 'scale-105', 'shadow-md');
-            });
-        });
-
-        // 5. Professional Network Graph (Fixed Hubs & Packets)
-        const canvas = document.getElementById('networkCanvas');
-        if (canvas) {
-            const ctx = canvas.getContext('2d');
-            let width, height;
-
-            // Hub Locations (Relative to canvas size) based roughly on India's map structure (North, South, East, West, Center)
-            const hubLocations = [
-                { x: 0.3, y: 0.25 }, // North (Delhi)
-                { x: 0.7, y: 0.35 }, // East (Kolkata)
-                { x: 0.25, y: 0.6 }, // West (Mumbai)
-                { x: 0.45, y: 0.8 }, // South (Bangalore)
-                { x: 0.5, y: 0.5 },  // Central (Nagpur)
-                { x: 0.35, y: 0.45 }, // West Central
-                { x: 0.6, y: 0.65 }  // South East (Chennai)
-            ];
-
-            let hubs = [];
-            let connections = [];
-            let packets = [];
-
-            class Hub {
-                constructor(x, y) {
-                    this.relX = x;
-                    this.relY = y;
-                    this.x = x * width;
-                    this.y = y * height;
-                    this.pulse = 0;
-                }
-                update() {
-                    this.x = this.relX * width;
-                    this.y = this.relY * height;
-                    this.pulse += 0.05;
-                }
-                draw() {
-                    // Pulse ring
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, 4 + Math.sin(this.pulse) * 4, 0, Math.PI * 2);
-                    ctx.strokeStyle = `rgba(255, 153, 51, ${0.5 - Math.sin(this.pulse)*0.3})`;
-                    ctx.stroke();
-
-                    // Center dot
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, 4, 0, Math.PI * 2);
-                    ctx.fillStyle = '#FF9933';
-                    ctx.fill();
-                }
-            }
-
-            class Connection {
-                constructor(hubA, hubB) {
-                    this.hubA = hubA;
-                    this.hubB = hubB;
-                }
-                draw() {
-                    ctx.beginPath();
-                    ctx.moveTo(this.hubA.x, this.hubA.y);
-                    ctx.lineTo(this.hubB.x, this.hubB.y);
-                    ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
-                    ctx.lineWidth = 1;
-                    ctx.stroke();
-                }
-            }
-
-            class Packet {
-                constructor(connection) {
-                    this.connection = connection;
-                    this.progress = Math.random();
-                    this.speed = 0.002 + Math.random() * 0.003;
-                    this.direction = Math.random() > 0.5 ? 1 : -1;
-                }
-                update() {
-                    this.progress += this.speed * this.direction;
-                    if (this.progress >= 1 || this.progress <= 0) {
-                        this.direction *= -1; // Bounce back
-                    }
-                }
-                draw() {
-                    const x = this.connection.hubA.x + (this.connection.hubB.x - this.connection.hubA.x) * this.progress;
-                    const y = this.connection.hubA.y + (this.connection.hubB.y - this.connection.hubA.y) * this.progress;
-                    
-                    ctx.beginPath();
-                    ctx.arc(x, y, 2, 0, Math.PI * 2);
-                    ctx.fillStyle = '#fff';
-                    ctx.fill();
-                }
-            }
-
-            function init() {
-                width = canvas.width = canvas.parentElement.clientWidth;
-                height = canvas.height = canvas.parentElement.clientHeight;
-                
-                hubs = hubLocations.map(loc => new Hub(loc.x, loc.y));
-                
-                // Connect every hub to 2 nearest neighbors
-                connections = [];
-                packets = [];
-                
-                hubs.forEach((hub, i) => {
-                    // Simple logic: connect to next 2 in array + random cross connection
-                    const target1 = hubs[(i + 1) % hubs.length];
-                    const target2 = hubs[(i + 2) % hubs.length];
-                    const target3 = hubs[Math.floor(Math.random()*hubs.length)]; // Random link
-
-                    if(!connections.some(c => (c.hubA === hub && c.hubB === target1) || (c.hubA === target1 && c.hubB === hub))) {
-                         connections.push(new Connection(hub, target1));
-                    }
-                    if(!connections.some(c => (c.hubA === hub && c.hubB === target2) || (c.hubA === target2 && c.hubB === hub))) {
-                         connections.push(new Connection(hub, target2));
-                    }
-                     if(target3 !== hub && !connections.some(c => (c.hubA === hub && c.hubB === target3) || (c.hubA === target3 && c.hubB === hub))) {
-                         connections.push(new Connection(hub, target3));
-                    }
-                });
-
-                // Create packets for active routes
-                connections.forEach(conn => {
-                    packets.push(new Packet(conn));
-                    if(Math.random() > 0.5) packets.push(new Packet(conn)); // Add extra traffic
-                });
-            }
-
-            window.addEventListener('resize', init);
-            init();
-
-            function animate() {
-                ctx.clearRect(0, 0, width, height);
-                
-                connections.forEach(c => c.draw());
-                hubs.forEach(h => { h.update(); h.draw(); });
-                packets.forEach(p => { p.update(); p.draw(); });
-
-                requestAnimationFrame(animate);
-            }
-            animate();
-        }
-    </script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
+
