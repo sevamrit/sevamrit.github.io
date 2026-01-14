@@ -402,72 +402,61 @@
     </section>
 
     <!-- Donation Section -->
-    <section class="donate" id="donate">
-        <div class="donate-pattern"></div>
-        <div class="container">
-            <div class="donate-wrapper">
-                <div class="donate-content" data-aos="fade-right">
-                    <span class="section-tag">Make a Difference</span>
-                    <h2 class="section-title">Your Generosity Creates Miracles</h2>
-                    <p class="donate-description">Every rupee you donate directly transforms into meals, clothes, and medical aid for those in need. 100% transparency guaranteed.</p>
+    <!-- Donation Section -->
+<section class="donate" id="donate">
+    <div class="donate-pattern"></div>
+    <div class="container">
+        <div class="donate-wrapper">
 
-                    <div class="donation-impact">
-                        <div class="impact-item">
-                            <span class="impact-amount">₹500</span>
-                            <span class="impact-desc">Feeds a family for a week</span>
-                        </div>
-                        <div class="impact-item">
-                            <span class="impact-amount">₹1,000</span>
-                            <span class="impact-desc">Winter kit for 5 people</span>
-                        </div>
-                        <div class="impact-item">
-                            <span class="impact-amount">₹2,500</span>
-                            <span class="impact-desc">Medical camp supplies</span>
-                        </div>
+            <!-- Left Content -->
+            <div class="donate-content" data-aos="fade-right">
+                <span class="section-tag">Make a Difference</span>
+                <h2 class="section-title">Your Generosity Creates Miracles</h2>
+                <p class="donate-description">
+                    Every rupee you donate directly transforms into meals, clothes, and medical aid for those in need.
+                    100% transparency guaranteed.
+                </p>
+
+                <div class="donation-impact">
+                    <div class="impact-item">
+                        <span class="impact-amount">₹500</span>
+                        <span class="impact-desc">Feeds a family for a week</span>
                     </div>
-                </div>
-
-                <div class="donate-form-wrapper" data-aos="fade-left">
-                    <div class="donate-card">
-                        <h3>Choose Your Contribution</h3>
-                        <div class="amount-buttons">
-                            <button class="amount-btn" data-amount="500">₹500</button>
-                            <button class="amount-btn active" data-amount="1000">₹1,000</button>
-                            <button class="amount-btn" data-amount="2500">₹2,500</button>
-                            <button class="amount-btn" data-amount="5000">₹5,000</button>
-                        </div>
-                        <div class="custom-amount">
-                            <label for="customAmount">Or enter custom amount:</label>
-                            <div class="input-wrapper">
-                                <span class="currency">₹</span>
-                                <input type="number" id="customAmount" placeholder="Enter amount" min="100">
-                            </div>
-                        </div>
-                        <div class="donation-type">
-                            <label class="radio-option">
-                                <input type="radio" name="donationType" value="onetime" checked>
-                                <span class="radio-custom"></span>
-                                <span class="radio-label">One-time Donation</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="donationType" value="monthly">
-                                <span class="radio-custom"></span>
-                                <span class="radio-label">Monthly Recurring</span>
-                            </label>
-                        </div>
-                        <button class="donate-btn">
-                            <i class="fas fa-heart"></i> Donate Now
-                            <span class="btn-shine"></span>
-                        </button>
-                        <div class="secure-badge">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>Secure Payment | 80G Tax Benefits</span>
-                        </div>
+                    <div class="impact-item">
+                        <span class="impact-amount">₹1,000</span>
+                        <span class="impact-desc">Winter kit for 5 people</span>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-amount">₹2,500</span>
+                        <span class="impact-desc">Medical camp supplies</span>
                     </div>
                 </div>
             </div>
+
+            <!-- Razorpay Donation Button -->
+            <div class="donate-form-wrapper" data-aos="fade-left">
+                <div class="donate-card">
+                    <h3>Donate Securely</h3>
+
+                    <form>
+                        <script
+                            src="https://checkout.razorpay.com/v1/payment-button.js"
+                            data-payment_button_id="pl_S3mqgPzYHeQj1T"
+                            async>
+                        </script>
+                    </form>
+
+                    <div class="secure-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secure Payment | 80G Tax Benefits</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Partners Section -->
     <section class="partners">
